@@ -5,50 +5,51 @@ var score = 0;
 console.log('Score is currently:', score);
 
 var favSubjs = ['German', 'Latin', 'History', 'English lit'];
-
 for (var i = 0; i < favSubjs.length; i++) {
     var bestSubjects = 'bestsubjs' + i;
-        console.log('bestsubjs HTML ID incremented:', bestSubjects);
+    console.log('bestsubjs HTML ID incremented:', bestSubjects);
     document.getElementById(bestSubjects).innerHTML = favSubjs[i] + '<br>';
-        console.log('Fav subjects value:', favSubjs[i]);
+    console.log('Fav subjects value:', favSubjs[i]);
 }
 
 // Y/N Question #1
 console.log('Y/N Question #1');
-
 function question1() {
-
     var willGiveName = prompt('Are you willing to tell me your name? ' +
     'Please answer yes or no (y or n are also acceptable).');
-        console.log('Is user willing to give name?', willGiveName);
-        if (willGiveName.toLowerCase() === 'yes' || willGiveName.toLowerCase() === 'y') {
-            alert('Ok, thanks!');
-            
-            // var realName = prompt('What is your name?');
-            // var userName = realName;
-            // console.log('User\'s name saved as:', userName);
+    console.log('Is user willing to give name?', willGiveName);
+    if (willGiveName.toLowerCase() === 'yes' || willGiveName.toLowerCase() === 'y') {
+        alert('Ok, thanks!');
 
-        } else if (willGiveName.toLowerCase() === 'no' || willGiveName.toLowerCase() === 'n') {
-            alert('Ok, no problem!!');
+        // Gotta reimplement counter now that we've put my questions in functions
+        // #################################################
+        // var realName = prompt('What is your name?');
+        // var userName = realName;
+        // console.log('User\'s name saved as:', userName);
+        // #################################################
 
-            // If user won't give name, create a variable that saves a default anonymous
-            // user name to use later when I show the tally of user's correct answers.
-            // var fakeName = 'Esteemed User';
-            // var userName = fakeName;
-            // console.log('User name saved as:', userName);
-
-        } else {
-            alert('Please answer yes/y or no/n in the future.');
-        }
+    } else if (willGiveName.toLowerCase() === 'no' || willGiveName.toLowerCase() === 'n') {
+        alert('Ok, no problem!!');
+        
+        // Gotta reimplement counter now that we've put my questions in functions
+        // ##########################################################################
+        // If user won't give name, create a variable that saves a default anonymous
+        // user name to use later when I show the tally of user's correct answers.
+        // var fakeName = 'Esteemed User';
+        // var userName = fakeName;
+        // console.log('User name saved as:', userName);
+        // ##########################################################################
+        
+    } else {
+        alert('Please answer yes/y or no/n in the future.');
+    }
 }
-
  question1();
     
 // Y/N Preliminary Question 
 console.log('Y/N Question #2');
 var willPlay = prompt('Do ya want to try to guess my age?' +
-' Answer "yes" or "no."' +
-' (The answers "y" or "n" are also acceptable.)' );
+' Answer "yes" or "no."' + ' (The answers "y" or "n" are also acceptable.)' );
 console.log('User wants to play:', willPlay);
 if (willPlay.toLowerCase() === 'yes' || willPlay.toLowerCase() === 'y') {
     alert('Ok, let\'s play!');
@@ -61,7 +62,6 @@ if (willPlay.toLowerCase() === 'yes' || willPlay.toLowerCase() === 'y') {
 if (willPlay.toLowerCase() === 'yes' || willPlay.toLowerCase() === 'y') { 
 // ^ Is there a more concise way to check if user has answered yes?
     
-
     // Y/N Question #2
     console.log('Y/N Question #2');
     function question2() {
@@ -81,13 +81,11 @@ if (willPlay.toLowerCase() === 'yes' || willPlay.toLowerCase() === 'y') {
             console.log('User\'s answer was invalid:', youngerThanTwenty);
         }
     }
-
     question2();
 
+    // Y/N Question #3
+    console.log('Y/N Question #3');
     function question3() {
-
-        // Y/N Question #3
-        console.log('Y/N Question #3');
         var youngerThanTwentyFive = prompt('Do you think I\'m younger than 25?' +
         ' Answer yes/y or no/n.');
         if (youngerThanTwentyFive.toLowerCase() === 'yes' || youngerThanTwentyFive.toLowerCase() === 'y') {
@@ -103,13 +101,11 @@ if (willPlay.toLowerCase() === 'yes' || willPlay.toLowerCase() === 'y') {
             console.log('User\'s answer was invalid:', youngerThanTwentyFive);
         }
     }
-
     question3();
 
+    // Y/N Question #4
+    console.log('Y/N Question #4');
     function question4(){
-
-        // Y/N Question #4
-        console.log('Y/N Question #4');
         var youngerThanThirty = prompt('Think I\'m younger than 30?' + 
         ' Answer yes/y or no/n.');
         if (youngerThanThirty.toLowerCase() === 'no' || youngerThanThirty.toLowerCase() === 'n') {
@@ -126,17 +122,16 @@ if (willPlay.toLowerCase() === 'yes' || willPlay.toLowerCase() === 'y') {
         }
 
     }
-
     question4();
 
-    //  Y/N question #5
+    // Y/N question #5
     console.log('Y/N question #5');
     function question5() {    
-
         var ageOptions = [26, 27, 28];
         var multipleChoiceGuess = prompt('Think my age is one of the following? ' +
         ageOptions[0].toString() + ', ' + ageOptions[1].toString() + ', ' +
         ageOptions[2].toString() + ' (Answer yes/y or no/n.)');
+        
         if (multipleChoiceGuess.toLowerCase() === 'yes' || multipleChoiceGuess.toLowerCase() === 'y') {
             alert('Nope! I\'m actually ' + myAge);
         } else if (multipleChoiceGuess.toLowerCase() === 'no' || multipleChoiceGuess.toLowerCase() === 'n') {
@@ -149,15 +144,13 @@ if (willPlay.toLowerCase() === 'yes' || willPlay.toLowerCase() === 'y') {
     }
     question5();
 
-        alert('Thanks for playing!');
-        console.log('Game over!');
+    alert('Thanks for playing!');
+    console.log('Age game over!');
 }
-
 
 // Question #6
 console.log('Question #6');
 function question6 () {
-
     var myFavNum = 7;
     for (var i = 0; i < 4; i++) {
         var userNumGuess = prompt('Guess what my favorite number is!');
@@ -196,7 +189,6 @@ question6();
 // Question #7
 console.log('Question #7');
 function question7() {
-
     // Declare string array with possible answers
     var rightAnswers = ['Nebraska', 'Michigan', 'South Carolina'];
     var guessesRemaining = 6;
@@ -237,8 +229,10 @@ question7();
     // console.log('Confirm final username:', userName);
     console.log('User\'s score was:', score);
 
-
+    // Gotta reimplement counter now that we've put my questions in functions
+    // ########################################################################
     // User won't be able to score all possible
     // points if they opt out of guessing my age.
     // alert(userName + ', your total score was ' + score + ' out of 6 possible points.');
     // console.log('End of program!');
+    // ########################################################################
