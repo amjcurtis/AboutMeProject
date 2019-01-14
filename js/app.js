@@ -16,7 +16,7 @@ for (var i = 0; i < favSubjs.length; i++) {
 console.log('Y/N Question #1');
 function question1() {
     var willGiveName = prompt('Are you willing to tell me your name? ' +
-    'Please answer yes or no (y or n are also acceptable).');
+    'Please answer yes/no (y/n is also acceptable, and capitalization doesn\'t matter.');
     console.log('Is user willing to give name?', willGiveName);
     if (willGiveName.toLowerCase() === 'yes' || willGiveName.toLowerCase() === 'y') {
         alert('Ok, thanks!');
@@ -41,7 +41,7 @@ function question1() {
         // ##########################################################################
         
     } else {
-        alert('Please answer yes/y or no/n in the future.');
+        alert('Please answer yes/y or no/n (again, capitalization doesn\'t matter).');
     }
 }
  question1();
@@ -56,7 +56,7 @@ if (willPlay.toLowerCase() === 'yes' || willPlay.toLowerCase() === 'y') {
 } else if (willPlay.toLowerCase() === 'no' || willPlay.toLowerCase() === 'n') {
     alert('Ok, no offense taken! ;)');
 } else {
-    alert('Sorry, the answer is not valid. Please answer yes/y or no/n.');
+    alert('Sorry, that\'s not a valid answer. Please answer yes/y or no/n.');
 }
 
 if (willPlay.toLowerCase() === 'yes' || willPlay.toLowerCase() === 'y') { 
@@ -175,7 +175,7 @@ function question6 () {
             } else {
                 console.log('User gave invalid input');
                 // Tell user input submitted was invalid and how to submit right input
-                alert('Answer is invalid. Please enter a number.');
+                alert('Sorry, that\'s not a valid answer. Please enter a number.');
             }
         }
 
