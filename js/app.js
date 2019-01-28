@@ -3,42 +3,37 @@
 var myAge = 29;
 var score = 0;
 console.log('Score is currently:', score);
+var realName;
+var userName;
+var fakeName;
 
 var favSubjs = ['German', 'Latin', 'History', 'English lit'];
 for (var i = 0; i < favSubjs.length; i++) {
     var bestSubjects = 'bestsubjs' + i;
-    console.log('bestsubjs HTML ID incremented:', bestSubjects);
     document.getElementById(bestSubjects).innerHTML = favSubjs[i] + '<br>';
-    console.log('Fav subjects value:', favSubjs[i]);
 }
 
 // Y/N Question #1
 console.log('Y/N Question #1');
 function question1() {
     var willGiveName = prompt('Are you willing to tell me your name? ' +
-    'Please answer yes/no (y/n is also acceptable, and capitalization doesn\'t matter.');
+    'Please answer yes or no ("y" or "n" is also acceptable, and capitalization doesn\'t matter).');
     console.log('Is user willing to give name?', willGiveName);
     if (willGiveName.toLowerCase() === 'yes' || willGiveName.toLowerCase() === 'y') {
         alert('Ok, thanks!');
 
-        // Gotta reimplement counter now that we've put my questions in functions
-        // #################################################
-        // var realName = prompt('What is your name?');
-        // var userName = realName;
-        // console.log('User\'s name saved as:', userName);
-        // #################################################
+        realName = prompt('What is your name?');
+        userName = realName;
+        console.log('User\'s name saved as:', userName);
 
     } else if (willGiveName.toLowerCase() === 'no' || willGiveName.toLowerCase() === 'n') {
         alert('Ok, no problem!!');
         
-        // Gotta reimplement counter now that we've put my questions in functions
-        // ##########################################################################
         // If user won't give name, create a variable that saves a default anonymous
         // user name to use later when I show the tally of user's correct answers.
-        // var fakeName = 'Esteemed User';
-        // var userName = fakeName;
-        // console.log('User name saved as:', userName);
-        // ##########################################################################
+        fakeName = 'Esteemed User';
+        userName = fakeName;
+        console.log('User name saved as:', userName);
         
     } else {
         alert('Please answer yes/y or no/n (again, capitalization doesn\'t matter).');
@@ -194,7 +189,7 @@ function question7() {
     var guessesRemaining = 6;
 
     while (guessesRemaining > 0) {
-        var userStateGuess = prompt('Can you guess a state I have lived in besides Washington');
+        var userStateGuess = prompt('Can you guess a state I have lived in besides Washington?');
         console.log('User\'s state guess: ', userStateGuess);
 
         for (var i = 0; i < rightAnswers.length; i++) {    
@@ -208,31 +203,21 @@ function question7() {
             }
         }
 
-        // Inspiration from Billy B. about control
-        // flow of the two 'if' statements below
         if (guessesRemaining > 0) { 
-            alert('Wrong, try again!');
+            alert('Not a correct answer, but try again!');
         }
 
         guessesRemaining--;
-        console.log('Guesses remaining:', guessesRemaining);
             
         if (guessesRemaining === 0) {
             alert('You are out of guesses! The possible correct answers were: ' +
             rightAnswers[0] + ', ' + rightAnswers[1] + ', and ' + rightAnswers[2]);
-            // guessesRemaining = 0;
             break;
         }
     }
 }
 question7();
-    // console.log('Confirm final username:', userName);
     console.log('User\'s score was:', score);
 
-    // Gotta reimplement counter now that we've put my questions in functions
-    // ########################################################################
-    // User won't be able to score all possible
-    // points if they opt out of guessing my age.
-    // alert(userName + ', your total score was ' + score + ' out of 6 possible points.');
-    // console.log('End of program!');
-    // ########################################################################
+    alert('Thanks for your guesses, ' + userName + '! You answered ' + score + ' questions correctly.');
+    console.log('End of program!');
